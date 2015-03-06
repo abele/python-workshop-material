@@ -11,6 +11,10 @@ Turn on the VM. VM startup time takes up to 5 min.
 When active you can access your VM from outside at http://username.koding.io/.
 This information is available from drop down menu in left hand side.
 
+Make sure that `apt-get` is up to date::
+
+  sudo apt-get update
+
 Revision Control
 ----------------
 
@@ -49,3 +53,45 @@ Now you project should show up in your GitHub account.
 
 Python
 ------
+
+Install `virtualenv` and `pip`::
+
+  sudo aptitude install python-virtualenv python-pip
+
+
+Activate project environment::
+
+  source venv/bin/activate
+
+Application
+===========
+
+Create `requirements.txt` file with web application development framework
+library::
+
+  Flask
+
+You can find documentation at http://flask.pocoo.org/.
+Install all projects requirements by running pip command::
+
+  pip install -r requirements.txt
+
+Add simple Flask application::
+
+  from flask import Flask
+  app = Flask(__name__)
+
+  @app.route("/")
+  def hello():
+      return "Hello World!"
+
+  if __name__ == "__main__":
+      app.run(debug=True, host='0.0.0.0')
+
+
+From terminal run application::
+
+  python web.py
+
+
+Inspect commands output for errors. See if it works at http://username.koding.io:5000/
