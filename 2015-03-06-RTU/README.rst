@@ -95,3 +95,9 @@ From terminal run application::
 
 
 Inspect commands output for errors. See if it works at http://username.koding.io:5000/
+
+Good job. Add changes to repository and push them::
+
+  git add .
+  git commit -m "Add Flask world application"
+  git push
